@@ -35,6 +35,7 @@ namespace CocktailEntityFramework.classes
             }
             catch (Exception e)
             {
+            //Hvad laver den herinde......
                 Console.WriteLine(e.Message);
                 return false;
 
