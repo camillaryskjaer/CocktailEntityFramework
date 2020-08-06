@@ -32,6 +32,7 @@ namespace CocktailEntityFramework.classes
         {
             try
             {
+            //Hvorfor exceptionhåndtering her? Og hvad kan der gå galt?
                 IngredientContents.AddRange(ingredientContents.ToList());
                     return true;
             }
@@ -44,6 +45,9 @@ namespace CocktailEntityFramework.classes
         public bool HaveAlcoholContent()
         {
             bool haveAlcohol = false;
+            //Du looper igennem hele listen, det tager tid og hvis du nu fandt noget
+            //alkohol, er det så nødvendigt at blive ved med at bruge tid på sat kigge ned i listen?
+            //Du kunne også have brugt Linq f.eks. Any og GetType på klassen!
             for (int i = 0; i < IngredientContents.Count; i++)
             {
                 if(IngredientContents[i] is IAlcholic)
